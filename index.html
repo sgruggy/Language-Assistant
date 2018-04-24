@@ -15,11 +15,11 @@
 	<!-- Craig's AFrameP5 AR library -->
 	<script language="javascript" type="text/javascript" src="libraries/aframep5_ar.js"></script>
 
-	<script>
+	<!-- <script>
 		if (location.protocol != 'https:') {
 			location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 		}
-	</script>>
+	</script>> -->
 
 	<link rel="stylesheet" type="text/css" href="index.css" />
 </head>
@@ -49,12 +49,17 @@
 				<h4 id="artist">Author, year</h4>
 			</div>
 			<div class="modal-body">
-				<img id="pic" src="images/stonebrick.png"/>
+				<img id="pic" src="images/stonebrick.png" />
 				<p id="transcript">Transcript</p>
+				<audio id="audioBox" controls>
+					<source id='audio' src="" type="audio/mpeg">
+				</audio>
 			</div>
 		</div>
 
 	</div>
+
+
 	<script language="javascript" type="text/javascript" src="sketch.js"></script>
 
 </body>

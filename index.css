@@ -5,6 +5,7 @@ body {
 }
 
 /* shows a warning message when the screen is rotated into portrait mode -- necessary to prevent issues on mobile devices */
+
 @media screen and (orientation:portrait) {
     #portrait_warning {
         position: fixed;
@@ -20,6 +21,7 @@ body {
 }
 
 /* hides the rotational warning when the screen is in landscape mode */
+
 @media screen and (orientation:landscape) {
     #portrait_warning {
         display: none;
@@ -27,32 +29,42 @@ body {
 }
 
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
     -webkit-animation-duration: 0.6s;
     animation-name: fadeIn;
     animation-duration: 0.6s
 }
 
 /* Modal Content */
+
 .modal-content {
-	
     position: fixed;
     bottom: 0;
-    margin:auto;
+    margin: auto;
     background-color: #fefefe;
     width: 100%;
-    height:100%;
+    height: 100%;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.6s;
     animation-name: slideIn;
@@ -60,6 +72,7 @@ body {
 }
 
 /* The Close Button */
+
 .close {
     color: white;
     float: right;
@@ -75,25 +88,27 @@ body {
 }
 
 .modal-header {
-    padding: 2px 16px;
+    padding: 2px 8px;
     background-color: #5cb85c;
     color: white;
 }
 
-.modal-body {padding: 2px 16px; 
-        height: 80%;
-        width: 100%;
+.modal-body {
+    padding: 2px 16px;
+    height: 80%;
+    width: 100%;
     overflow-y: scroll;
-text-align: center;}
+    text-align: center;
+}
 
-.modal-body p{
+.modal-body p {
     width: 90%;
     display: inline-block;
 }
 
-.modal-body img{
-    display:block;
-    margin:auto;
+.modal-body img {
+    display: block;
+    margin: auto;
     max-width: 100%;
     max-height: 100%;
 }
@@ -105,23 +120,93 @@ text-align: center;}
 }
 
 /* Add Animation */
+
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
 
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: blue;
+    background-color: yellow;
+}
+
+/* The actual popup */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}

@@ -62,6 +62,11 @@ function showModal(artwork){
   document.getElementById('artist').innerHTML = artwork.artist + ", " + artwork.year;
   document.getElementById('pic').src = artwork.url;
   document.getElementById('transcript').innerHTML = artwork.transcript;
+  const audioBox = document.getElementById('audioBox');
+  const audio = document.createElement('source');
+  audio.src = "audio/" + artwork.id + ".mp3";
+  audio.type = "audio/mpeg";
+  audioBox.appendChild(audio);
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -75,4 +80,9 @@ window.onclick = function(event) {
   if (event.target == modal) {
       modal.style.display = "none";
   }
+}
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
