@@ -1742,9 +1742,10 @@ function removeFromWorld(entity) {
 }
 
 
-
-
-function Marker(id, world) {
+function Marker(id, world, data) {
+	if(data){
+		this.data = data;
+	}
 	// store a reference to the world
 	this.worldRef = world;
 
@@ -1812,7 +1813,11 @@ function Marker(id, world) {
 		return {
         	x: vector.x,
 			y: vector.y
-    	};
+		};
+	}
+
+	this.executeFound = function(){
+		this.onFound(this.data);
 	}
 }
 
