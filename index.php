@@ -30,7 +30,30 @@
 		<!-- set up all of the AR markers we will be working with along with links to their 'pattern' files -->
 		<!-- note that we aren't putting any geometry inside of marker here - we will do that in the p5 sketch -->
 		
+		<?php
+		$myfile = fopen("markers.json", "r") or die("Unable to open file!");
+		$decoded = json_decode(fread($myfile, filesize('markers.json')));
 
+		for($i = 0; $i < sizeof($decoded); $i++){
+			echo '<a-marker class="artwork" id="' . $i .'" preset="custom" url="markers/' . $i . '.patt"></a-marker>';
+		}
+		fclose($myfile);
+		?>
+		<!-- <a-marker class="artwork" id="0" preset="custom" url="markers/0.patt"></a-marker> -->
+		
+		
+		
+		<!-- <a-marker preset="custom" url="markers/0.patt"></a-marker> -->
+		<!-- <script>
+			const parent = document.getElementById('ARScene');
+			const toAdd = document.createElement('a-marker');
+			toAdd.id = "0";
+			toAdd.url = "markers/0.patt";
+			toAdd.preset = "custom";
+			parent.appendChild(toAdd);
+			console.log(parent);
+
+		</script> -->
 		<a-entity camera></a-entity>
 	</a-scene>
 
@@ -52,6 +75,7 @@
 
 	</div>
 
+	<script src="libraries/marker_tagger.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script language="javascript" type="text/javascript" src="sketch.js"></script>
 
