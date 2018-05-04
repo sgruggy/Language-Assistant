@@ -7,7 +7,7 @@ const modal = document.getElementById('myModal');
 const span = document.getElementsByClassName("close")[0];
 
 // create variables to hold our markers
-const markers = [];
+// const markers = [];
 let found = false;
 
 function setup() {
@@ -24,7 +24,6 @@ function draw() {
         const thisMarker = markers[i];
         world.clearDrawingCanvas();
         found = true;
-
         thisMarker.executeFound();
       }
     }
