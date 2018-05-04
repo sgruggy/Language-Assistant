@@ -12,7 +12,6 @@ function matchMarkers(callback) {
           toAdd[key] = currentObj[key];
         }
 
-        toAdd.htmlElement = createMarkerElement("ARScene", "artwork", toAdd.id);
         const marker = world.getMarker("" + toAdd.id);
         marker.data = toAdd;
         marker.onFound = callback;

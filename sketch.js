@@ -69,27 +69,3 @@ function removeAudio() {
   const removeAudio = document.getElementById('audioBox');
   removeAudio.parentNode.removeChild(removeAudio);
 }
-
-function matchMarkers(callback) {
-  $.ajax({
-    url: "markers.json",
-    async: true,
-    dataType: "json",
-    success: function (data) {
-      for (let i = 0; i < data.length; i++) {
-        const currentObj = data[i];
-        const toAdd = {};
-
-        for (const key in currentObj) {
-          toAdd[key] = currentObj[key];
-        }
-
-        const marker = world.getMarker("" + toAdd.id);
-        marker.data = toAdd;
-        marker.onFound = callback;
-        markers.push(marker);
-      }
-      console.log(document.getElementById("ARScene"));
-    }
-  });
-}
