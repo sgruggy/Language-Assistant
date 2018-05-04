@@ -68,7 +68,6 @@
 				<h4 id="artist">Author, year</h4>
 			</div>
 			<div class="modal-body" id="modal-body">
-				<img id="pic" src="images/stonebrick.png" />
 				<p id="transcript">Transcript</p>
 			</div>
 		</div>
